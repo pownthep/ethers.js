@@ -70,7 +70,7 @@ function getBaseEncoder(type) {
             return function (_value) {
                 const value = getBigInt(_value, "value");
                 assertArgument(value >= boundsLower && value <= boundsUpper, `value out-of-bounds for ${type}`, "value", value);
-                return toBeHex(toTwos(value, 256), 32);
+                return toBeHex(signed ? toTwos(value, 256) : value, 32);
             };
         }
     }

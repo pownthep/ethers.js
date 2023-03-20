@@ -73,7 +73,7 @@ function getBaseEncoder(type) {
             return function (_value) {
                 const value = (0, index_js_4.getBigInt)(_value, "value");
                 (0, index_js_4.assertArgument)(value >= boundsLower && value <= boundsUpper, `value out-of-bounds for ${type}`, "value", value);
-                return (0, index_js_4.toBeHex)((0, index_js_4.toTwos)(value, 256), 32);
+                return (0, index_js_4.toBeHex)(signed ? (0, index_js_4.toTwos)(value, 256) : value, 32);
             };
         }
     }
